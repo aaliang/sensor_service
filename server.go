@@ -15,7 +15,7 @@ import (
 func handleHello(w http.ResponseWriter, req *http.Request) {
 	name := req.FormValue("name")
 	if len(name) > 0 {
-		fmt.Fprintf(w, "Hello %s", name)
+		fmt.Fprintf(w, "{\"message\": \"Hello %s\"}", name)
 	} else {
 		http.Error(w, "Error: name not provided", http.StatusBadRequest)
 	}
